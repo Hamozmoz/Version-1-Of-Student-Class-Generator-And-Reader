@@ -2,7 +2,7 @@
 #define ClassGen
 
 
-void GenClass();
+void GenClass(std::vector<std::string>& Classes);
 
 
 
