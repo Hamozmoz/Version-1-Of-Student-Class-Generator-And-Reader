@@ -93,7 +93,7 @@ std::cout << "How Many Students Are In This Class : \n";
 std::cin >> studentNum;
 std::cin.ignore();
 std::ofstream file;
- file.open("Classes",std::ios::app);
+ file.open("Classes.md",std::ios::app);
 file << className << "\n";
 for(size_t i{0};i<studentNum;i++)
 {

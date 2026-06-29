@@ -9,28 +9,32 @@
 #include "Classgen.h"
 #include <vector>
 #include "ClassDataPrinter.h"
+#include <filesystem>
 std::vector<std::string> Classes;
 int main(){
 char choice{'8'};
 
-while(choice != 0 || choice != 1){
+do{
     std::cout << "What Would You Like To Do (0)Generate A New Class (1) Read Class Data (Default) Quit Program : \n";
     std::cin >> choice ;
     std::cin.ignore();
     switch(choice){
-        case 0 :
+        case '0' :
 GenClass(Classes);
 break;
-case 1 :
+case '1' :
 printClassData(Classes);
 break;
 default :
 std::cout << "Exiting Program...\n";
 break;
+
 }
+}while(choice == '0' || choice == '1');
+
+if(std::filesystem::exists("Classes.md")){
+std::filesystem::remove("Classes.md");
 }
 
-std::ofstream file("Classes");
 
-file.close();
 }

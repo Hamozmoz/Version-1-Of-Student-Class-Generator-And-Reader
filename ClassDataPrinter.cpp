@@ -10,9 +10,9 @@
 
 void printClassData(std::vector<std::string>& Classes){
     bool isAClassName(std::string_view str,std::vector<std::string>& Classes);
-if(std::filesystem::exists("Classes")){
+if(std::filesystem::exists("Classes.md")){
   
-std::ifstream file("Classes");
+std::ifstream file("Classes.md");
 std::string line;
 int choice{-1};
 std::cout << "Would You Like To Print All Class Data (0) Or Would You Like To Print The Data Of A Specific Class (1)\n";
