@@ -34,18 +34,61 @@ while(std::getline(file ,line)){
     int grade;
     file >> grade;
     std::cout << "Student : " << line << " Grade : " << grade << "\n"; 
-}
+}else{
+    file.ignore();
+            break;
+            
+        }
 
         }
     }
   }
 }
+break;
+case 1 :{
+std::string str;
+std::cout << "What Class's Data Would You Like To Print : \n";
+while(!isAClassName(str,Classes)){
+    std::cin >> str;
+    if(!isAClassName(str,Classes)){
+std::cout << str<< " Is Not A Class Name, Please Enter A Valid Class Name From These : \n";
+for(size_t i=0;i<Classes.size();i++){
+std::cout <<i << " : "<< Classes[i] << "   " ;
+}
+std::cout<< "\n";
 
     }
+}
+   bool finishedPrint{false};
+while(std::getline(file,line) ){
+ 
+if(line == str){
+    std::cout << line << ": \n";
+    while(file >> line){
+          if(line != "--------"){
+    int grade;
+    file >> grade;
+    std::cout << "Student : " << line << " Grade : " << grade << "\n"; 
+
+    }else{
+        file.ignore();
+finishedPrint = true;
+        break;
+    }
+}
+}
+if(finishedPrint){
+    break;
+}    
+}}
+default :
+std::cout << "Invalid Choice \n";
+break;
 }
 
 
 
+}
 
 
 }
